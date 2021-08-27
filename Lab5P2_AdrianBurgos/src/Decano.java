@@ -1,11 +1,11 @@
 public class Decano extends Personas{
     private String titulacion;
-    private String id;
+    private long id;
     private int edad;
     private String tituloU;
     private String tituloM;
 
-    public Decano(String nombre, String apellido, String usuario, String password, String titulacion, String id, int edad, String tituloU, String tituloM) {
+    public Decano(String nombre, String apellido, String usuario, String password, String titulacion, long id, int edad, String tituloU, String tituloM) {
         super(nombre, apellido, usuario, password);
         this.titulacion = titulacion;
         this.id = id;
@@ -22,11 +22,11 @@ public class Decano extends Personas{
         this.titulacion = titulacion;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 

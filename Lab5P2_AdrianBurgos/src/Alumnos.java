@@ -4,7 +4,7 @@ public class Alumnos extends Personas {
     private int aniocarrera;
     private int clasesfaltantes;
 
-    public Alumnos(int cuenta, String carrera, int aniocarrera, int clasesfaltantes, String nombre, String apellido, String usuario, String password) {
+    public Alumnos(String nombre, String apellido, String usuario, String password, int cuenta, String carrera, int aniocarrera, int clasesfaltantes) {
         super(nombre, apellido, usuario, password);
         this.cuenta = cuenta;
         this.carrera = carrera;

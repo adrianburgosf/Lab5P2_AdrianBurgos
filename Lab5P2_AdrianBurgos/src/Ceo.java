@@ -1,10 +1,10 @@
 public class Ceo extends Personas{
     private String titulacion;
-    private String id;
+    private long id;
     private int experiencia;
     private int edad;
 
-    public Ceo(String nombre, String apellido, String usuario, String password, String titulacion, String id, int experiencia, int edad) {
+    public Ceo(String nombre, String apellido, String usuario, String password, String titulacion, long id, int experiencia, int edad) {
         super(nombre, apellido, usuario, password);
         this.titulacion = titulacion;
         this.id = id;
@@ -20,11 +20,11 @@ public class Ceo extends Personas{
         this.titulacion = titulacion;
     }
 
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
