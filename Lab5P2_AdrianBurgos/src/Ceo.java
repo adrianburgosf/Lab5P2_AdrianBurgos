@@ -43,5 +43,4 @@ public class Ceo extends Personas{
     public void setEdad(int edad) {
         this.edad = edad;
     }
-    
 }
