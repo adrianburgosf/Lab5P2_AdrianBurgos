@@ -163,6 +163,22 @@ public class Main extends javax.swing.JFrame {
         jListar = new javax.swing.JMenuItem();
         jModificar = new javax.swing.JMenuItem();
         jEliminar = new javax.swing.JMenuItem();
+        jDialog1 = new javax.swing.JDialog();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel112 = new javax.swing.JLabel();
+        jM_Carrera1 = new javax.swing.JTextField();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jM_Aniocarrera1 = new javax.swing.JTextField();
+        jLabel116 = new javax.swing.JLabel();
+        jM_Cuenta1 = new javax.swing.JTextField();
+        jLabel117 = new javax.swing.JLabel();
+        jM_Nombre1 = new javax.swing.JTextField();
+        jM_Clasesfaltantes1 = new javax.swing.JTextField();
+        jLabel118 = new javax.swing.JLabel();
+        jM_Apellido1 = new javax.swing.JTextField();
+        jModificar_alumno1 = new javax.swing.JButton();
+        jLabel26 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jd_Login = new javax.swing.JButton();
@@ -1244,6 +1260,11 @@ public class Main extends javax.swing.JFrame {
         jPopupMenu.add(jListar);
 
         jModificar.setText("Modificar");
+        jModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jModificarActionPerformed(evt);
+            }
+        });
         jPopupMenu.add(jModificar);
 
         jEliminar.setText("Eliminar");
@@ -1253,6 +1274,140 @@ public class Main extends javax.swing.JFrame {
             }
         });
         jPopupMenu.add(jEliminar);
+
+        jLabel112.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel112.setText("Apellido");
+
+        jLabel115.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel115.setText("Carrera");
+
+        jLabel25.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel25.setText("Cuenta");
+
+        jLabel116.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel116.setText("Año de la carrera");
+
+        jLabel117.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel117.setText("Cantidad de clases faltantes");
+
+        jLabel118.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel118.setText("Nombre");
+
+        jModificar_alumno1.setText("OK");
+        jModificar_alumno1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jModificar_alumno1MouseClicked(evt);
+            }
+        });
+
+        jLabel26.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel26.setText("Modificar Cuenta");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(295, 295, 295)
+                        .addComponent(jLabel26))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(341, 341, 341)
+                        .addComponent(jModificar_alumno1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(323, Short.MAX_VALUE))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(118, 118, 118)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel118)
+                                    .addComponent(jLabel112)
+                                    .addComponent(jLabel115)
+                                    .addComponent(jLabel116))
+                                .addGap(18, 18, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                                .addComponent(jLabel117)
+                                .addGap(84, 84, 84)))
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jLabel25)
+                            .addGap(282, 282, 282)))
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jM_Nombre1)
+                        .addComponent(jM_Apellido1)
+                        .addComponent(jM_Carrera1)
+                        .addComponent(jM_Aniocarrera1)
+                        .addComponent(jM_Clasesfaltantes1)
+                        .addComponent(jM_Cuenta1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(118, 118, 118)))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(jLabel26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 336, Short.MAX_VALUE)
+                .addComponent(jModificar_alumno1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(45, 45, 45))
+            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createSequentialGroup()
+                    .addGap(109, 109, 109)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel118)
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jM_Nombre1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(1, 1, 1)))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel112)
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jM_Apellido1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(1, 1, 1)))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel115)
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jM_Carrera1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(1, 1, 1)))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel116)
+                        .addGroup(jPanel6Layout.createSequentialGroup()
+                            .addComponent(jM_Aniocarrera1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(1, 1, 1)))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel117, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jM_Clasesfaltantes1))
+                    .addGap(18, 18, 18)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jM_Cuenta1, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                        .addComponent(jLabel25))
+                    .addGap(116, 116, 116)))
+        );
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDialog1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jDialog1Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1564,6 +1719,19 @@ public class Main extends javax.swing.JFrame {
         listardecano();
     }//GEN-LAST:event_jEliminarActionPerformed
 
+    private void jModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jModificarActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jModificarActionPerformed
+
+    private void jModificar_alumno1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jModificar_alumno1MouseClicked
+        // TODO add your handling code here:
+        jDialog1.setModal(true);
+        jDialog1.pack();
+        jDialog1.setLocationRelativeTo(this);
+        jDialog1.setVisible(true);
+    }//GEN-LAST:event_jModificar_alumno1MouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1703,6 +1871,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JList<String> jDecanoalum;
     private javax.swing.JList<String> jDecanodocente;
     private javax.swing.JTextArea jDescripcion;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JDialog jDocente;
     private javax.swing.JMenuItem jEliminar;
     private javax.swing.JButton jEnter;
@@ -1723,8 +1892,13 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel110;
     private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
     private javax.swing.JLabel jLabel113;
     private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
@@ -1739,6 +1913,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1772,13 +1948,20 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JMenuItem jListar;
     private javax.swing.JDialog jLogin;
     private javax.swing.JTextField jM_Aniocarrera;
+    private javax.swing.JTextField jM_Aniocarrera1;
     private javax.swing.JTextField jM_Apellido;
+    private javax.swing.JTextField jM_Apellido1;
     private javax.swing.JTextField jM_Carrera;
+    private javax.swing.JTextField jM_Carrera1;
     private javax.swing.JTextField jM_Clasesfaltantes;
+    private javax.swing.JTextField jM_Clasesfaltantes1;
     private javax.swing.JTextField jM_Cuenta;
+    private javax.swing.JTextField jM_Cuenta1;
     private javax.swing.JTextField jM_Nombre;
+    private javax.swing.JTextField jM_Nombre1;
     private javax.swing.JMenuItem jModificar;
     private javax.swing.JButton jModificar_alumno;
+    private javax.swing.JButton jModificar_alumno1;
     private javax.swing.JTextField jNota;
     private javax.swing.JComboBox<String> jOpcionesregistro;
     private javax.swing.JPanel jPanel1;
@@ -1789,6 +1972,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jParticipacion;
     private javax.swing.JPasswordField jPassword;
