@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.DefaultListModel;
+import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 public class Main extends javax.swing.JFrame {
     private int currentuser;
@@ -150,7 +152,17 @@ public class Main extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jDecano = new javax.swing.JDialog();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTree = new javax.swing.JTree();
+        jDecanoalum = new javax.swing.JList<>();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jDecanodocente = new javax.swing.JList<>();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        jPopupMenu = new javax.swing.JPopupMenu();
+        jListar = new javax.swing.JMenuItem();
+        jModificar = new javax.swing.JMenuItem();
+        jEliminar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jd_Login = new javax.swing.JButton();
@@ -1162,24 +1174,85 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jScrollPane4.setViewportView(jTree);
+        jDecanoalum.setModel(new DefaultListModel());
+        jDecanoalum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jDecanoalumMouseClicked(evt);
+            }
+        });
+        jScrollPane4.setViewportView(jDecanoalum);
+
+        jDecanodocente.setModel(new DefaultListModel());
+        jScrollPane5.setViewportView(jDecanodocente);
+
+        jLabel21.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel21.setText("Alumnos que han");
+
+        jLabel22.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel22.setText("Docentes");
+
+        jLabel23.setFont(new java.awt.Font("Times New Roman", 0, 36)); // NOI18N
+        jLabel23.setText("DECANO");
+
+        jLabel24.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel24.setText(" realizado prueba");
 
         javax.swing.GroupLayout jDecanoLayout = new javax.swing.GroupLayout(jDecano.getContentPane());
         jDecano.getContentPane().setLayout(jDecanoLayout);
         jDecanoLayout.setHorizontalGroup(
             jDecanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jDecanoLayout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(73, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
+            .addGroup(jDecanoLayout.createSequentialGroup()
+                .addGroup(jDecanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jDecanoLayout.createSequentialGroup()
+                        .addGap(238, 238, 238)
+                        .addComponent(jLabel23))
+                    .addGroup(jDecanoLayout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addGroup(jDecanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel21)
+                            .addGroup(jDecanoLayout.createSequentialGroup()
+                                .addComponent(jLabel24)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel22)))))
+                .addGap(129, 129, 129))
         );
         jDecanoLayout.setVerticalGroup(
             jDecanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDecanoLayout.createSequentialGroup()
-                .addContainerGap(95, Short.MAX_VALUE)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+            .addGroup(jDecanoLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel23)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jDecanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel22))
+                .addGap(18, 18, 18)
+                .addGroup(jDecanoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)
+                    .addComponent(jScrollPane4))
+                .addGap(25, 25, 25))
         );
+
+        jListar.setText("Listar");
+        jPopupMenu.add(jListar);
+
+        jModificar.setText("Modificar");
+        jPopupMenu.add(jModificar);
+
+        jEliminar.setText("Eliminar");
+        jEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jEliminarActionPerformed(evt);
+            }
+        });
+        jPopupMenu.add(jEliminar);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -1252,6 +1325,8 @@ public class Main extends javax.swing.JFrame {
 
     private void jd_LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jd_LoginMouseClicked
         // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) jPruebas.getModel();
+        model.setRowCount(0);
         jLogin.setModal(true);        
         jLogin.pack();  
         jLogin.setLocationRelativeTo(this);
@@ -1458,6 +1533,37 @@ public class Main extends javax.swing.JFrame {
         setModificaciones();
     }//GEN-LAST:event_jModificar_alumnoMouseClicked
 
+    private void jDecanoalumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jDecanoalumMouseClicked
+        // TODO add your handling code here:
+        if (jDecanoalum.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                jPopupMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
+    }//GEN-LAST:event_jDecanoalumMouseClicked
+
+    private void jEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEliminarActionPerformed
+        // TODO add your handling code here:
+        if (jDecanoalum.getSelectedIndex() >= 0) {
+            ArrayList alum = new ArrayList();
+            for (int j = 0; j < usuarios.size(); j++) {
+                for (int i = 0; i < usuarios.size(); i++) {
+                    if (usuarios.get(i) instanceof Alumnos) {
+                        alum.add(usuarios.get(i));
+                    }
+                }
+            }
+            Object temp = alum.get(jDecanoalum.getSelectedIndex());
+            for (int i = 0; i < usuarios.size(); i++) {
+                if (temp.equals(usuarios.get(i))) {
+                    usuarios.remove(i);
+                }
+            }
+            JOptionPane.showMessageDialog(this, "Eliminado exitosamente");
+        }
+        listardecano();
+    }//GEN-LAST:event_jEliminarActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -1495,7 +1601,11 @@ public class Main extends javax.swing.JFrame {
             
         }
         else if (usuarios.get(i) instanceof Decano) {
-            
+            jDecano.setModal(true);
+            jDecano.pack();
+            jDecano.setLocationRelativeTo(this);
+            listardecano();
+            jDecano.setVisible(true);
         }
         else if (usuarios.get(i) instanceof Docente) {
             jDocente.setModal(true);
@@ -1555,6 +1665,32 @@ public class Main extends javax.swing.JFrame {
         jM_Cuenta.setText(""+((Alumnos)usuarios.get(currentuser)).getCuenta());
     }
     
+    public void listardecano() {
+        DefaultListModel modelo = (DefaultListModel) jDecanoalum.getModel();
+        modelo.removeAllElements();
+        modelo.clear();
+        jDecanoalum.removeAll();
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i) instanceof Alumnos) {
+                modelo.addElement(usuarios.get(i));
+                jDecanoalum.setModel(modelo);
+                ((Alumnos)usuarios.get(i)).setIndex(i);
+            }
+        }
+        DefaultListModel modelod = (DefaultListModel) jDecanodocente.getModel();
+        modelod.removeAllElements();
+        modelod.clear();
+        jDecanodocente.removeAll();
+        for (int i = 0; i < usuarios.size(); i++) {
+            if (usuarios.get(i) instanceof Docente) {
+                modelod.addElement(usuarios.get(i));
+                jDecanodocente.setModel(modelod);
+                ((Docente)usuarios.get(i)).setIndex(i);
+            }
+        }
+    }
+    
+    
     public ArrayList <Personas> usuarios = new ArrayList();
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -1564,8 +1700,11 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jB_Registrarse;
     private javax.swing.JTextField jCoop;
     private javax.swing.JDialog jDecano;
+    private javax.swing.JList<String> jDecanoalum;
+    private javax.swing.JList<String> jDecanodocente;
     private javax.swing.JTextArea jDescripcion;
     private javax.swing.JDialog jDocente;
+    private javax.swing.JMenuItem jEliminar;
     private javax.swing.JButton jEnter;
     private javax.swing.JTextField jEquipo;
     private javax.swing.JSpinner jGeneral;
@@ -1596,6 +1735,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1626,6 +1769,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel97;
     private javax.swing.JLabel jLabel98;
     private javax.swing.JLabel jLabel99;
+    private javax.swing.JMenuItem jListar;
     private javax.swing.JDialog jLogin;
     private javax.swing.JTextField jM_Aniocarrera;
     private javax.swing.JTextField jM_Apellido;
@@ -1633,6 +1777,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jM_Clasesfaltantes;
     private javax.swing.JTextField jM_Cuenta;
     private javax.swing.JTextField jM_Nombre;
+    private javax.swing.JMenuItem jModificar;
     private javax.swing.JButton jModificar_alumno;
     private javax.swing.JTextField jNota;
     private javax.swing.JComboBox<String> jOpcionesregistro;
@@ -1647,6 +1792,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JTextField jParticipacion;
     private javax.swing.JPasswordField jPassword;
+    private javax.swing.JPopupMenu jPopupMenu;
     private javax.swing.JTable jPruebas;
     private javax.swing.JTextField jR_Aniocarrera;
     private javax.swing.JTextField jR_Apellido;
@@ -1690,8 +1836,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTree jTree;
     private javax.swing.JTextField jUsuario;
     private javax.swing.JButton jd_Login;
     private javax.swing.JButton jd_Register;

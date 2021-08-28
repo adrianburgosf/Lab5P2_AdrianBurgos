@@ -4,6 +4,7 @@ public class Docente extends Personas{
     private int alumnos;
     private String nombreclase;
     private String clasedesc;
+    private int index;
 
     public Docente(String nombre, String apellido, String usuario, String password, String titulacion, String titulacionM, int alumnos, String nombreclase, String clasedesc) {
         super(nombre, apellido, usuario, password);
@@ -53,5 +54,17 @@ public class Docente extends Personas{
     public void setClasedesc(String clasedesc) {
         this.clasedesc = clasedesc;
     }
+
+    public int getIndex() {
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
+    }
     
+    @Override
+    public String toString() {
+        return super.getNombre()+" "+super.getApellido();
+    }
 }
